@@ -135,6 +135,16 @@ nav {
     color: #888;
 }
 
+#cpu-value {
+    font-size: 24px;
+    color: #D1B862;
+}
+
+#ram-value {
+    font-size: 24px;
+    color: #D1B862;
+}
+
 .performance h2 {
     font-size: 21px;
     margin-bottom: 22px;
