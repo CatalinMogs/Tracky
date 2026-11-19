@@ -1,9 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Tracky</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tracky - Your Personal Monitor</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>TRACKY IS RUNNING!</h1>
+
+        <div id="app">
+            
+            <header class="topbar">
+                <div class="brand">TRACKY</div>
+                <div class="system-status">
+                    <span class="status-indicator"></span>
+                    SYSTEM ONLINE
+                </div>
+            </header>
+
+            <div class="layout">
+
+                <aside class="sidebar">
+                    <p class="section-label">MONITOR</p>
+
+                    <nav>
+                        <a class="nav-item active" href="#">Overview</a>
+                        <a class="nav-item" href="#">Processor</a>
+                        <a class="nav-item" href="#">Memory</a>
+                        <a class="nav-item" href="#">Graphics</a>
+                        <a class="nav-item" href="#">Network</a>
+                    </nav>
+
+                    <div class="sidebar-footer">
+                        TRACKY / ALPHA BUILD v1
+                    </div>
+                </aside>
+
+                <main class="workspace">
+
+                    <div class="page-heading">
+                        <div>
+                            <p class="section-label">SYSTEM / OVERVIEW</p>
+                            <h1>System Overview</h1>
+                        </div>
+
+                        <div class="timestamp">
+                            LIVE MONITORING
+                        </div>
+                    </div>
+
+                    <section class="telemetry">
+                        <div class="metric">
+                            <p>CPU USAGE</p>
+                            <h2>--<span>%</span></h2>
+                        </div>
+
+                        <div class="metric">
+                            <p>MEMORY USAGE</p>
+                            <h2>--<span>%</span></h2>
+                        </div>
+
+                        <div class="metric">
+                            <p>GPU USAGE</p>
+                            <h2>--<span>%</span></h2>
+                        </div>
+
+                        <div class="metric">
+                            <p>UPTIME</p>
+                            <h2>--</h2>
+                        </div>
+                    </section>
+
+                    <section class="performance">
+                        <p class="section-label">PERFORMANCE / 01</p>
+                        <h2>Performance History</h2>
+
+                        <div class="chart-placeholder">
+                            AWAITING SYSTEM DATA
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <script src="renderer.js"></script>
     </body>
 </html>
