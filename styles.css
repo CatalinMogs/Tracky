@@ -103,7 +103,7 @@ nav {
 
 .telemetry {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     border: 1px solid #292929;
     margin-bottom: 42px;
 }
@@ -141,6 +141,16 @@ nav {
 }
 
 #ram-value {
+    font-size: 24px;
+    color: #D1B862;
+}
+
+#download-value {
+    font-size: 24px;
+    color: #D1B862;
+}
+
+#upload-value {
     font-size: 24px;
     color: #D1B862;
 }
