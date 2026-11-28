@@ -23,5 +23,16 @@ async function updateMetrics() {
     }
 }
 
+async function testGPU() {
+    try {
+        const gpus = await window.tracky.getGPUInfo();
+
+        console.log("Tracky GPU information:", gpus);
+    } catch (error) {
+        console.error("GPU detection failed:", error);
+    }
+}
+
+testGPU();
 updateMetrics();
 setInterval(updateMetrics, 1000);

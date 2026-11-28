@@ -1,5 +1,18 @@
 const si = require("systeminformation");
 
+async function getGPUInfo() {
+    const graphics = await si.graphics();
+
+    return graphics.controllers
+        .filter(gpu => gpu.vendor && gpu.bus === "PCI")
+        .map(gpu => ({
+            name: gpu.model || "Unknown GPU",
+            vendor: gpu.vendor,
+            vram: gpu.vram,
+            vramDynamic: gpu.vramDynamic
+        }));
+}
+
 async function getSystemStats() {
     const cpu = await si.currentLoad();
     const memory = await si.mem();
@@ -21,4 +34,4 @@ async function getSystemStats() {
     };
 }
 
-module.exports = { getSystemStats };
+module.exports = { getSystemStats, getGPUInfo };

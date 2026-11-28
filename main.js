@@ -1,8 +1,12 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { getSystemStats } = require("./monitor");
+const { getSystemStats, getGPUInfo } = require("./monitor");
 
 ipcMain.handle("get-system-stats", async () => {
     return await getSystemStats();
+});
+
+ipcMain.handle("get-gpu-info", async () => {
+    return await getGPUInfo();
 });
 
 function createWindow() {
