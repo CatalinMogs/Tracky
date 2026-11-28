@@ -23,6 +23,26 @@ async function updateMetrics() {
     }
 }
 
+async function updateGPU() {
+    try {
+        const usage = await window.tracky.getGPUUsage();
+
+        const gpuElement = document.getElementById("gpu-value");
+
+        if (typeof usage !== "number" || !Number.isFinite(usage)) {
+            gpuElement.textContent - "--";
+            return;
+        }
+
+        gpuElement.textContent = Math.round(usage);
+    } catch (error) {
+        console.error("GPU monitoring error:", error);
+        document.getElementById("gpu-value").textContent = "--";
+    } finally {
+        setTimeout(updateGPU, 6000);
+    }
+}
+
 async function testGPU() {
     try {
         const gpus = await window.tracky.getGPUInfo();
@@ -34,5 +54,8 @@ async function testGPU() {
 }
 
 testGPU();
+
 updateMetrics();
 setInterval(updateMetrics, 1000);
+
+updateGPU();

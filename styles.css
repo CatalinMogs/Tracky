@@ -145,6 +145,11 @@ nav {
     color: #D1B862;
 }
 
+#gpu-value {
+    font-size: 24px;
+    color: #D1B862;
+}
+
 #download-value {
     font-size: 24px;
     color: #D1B862;
